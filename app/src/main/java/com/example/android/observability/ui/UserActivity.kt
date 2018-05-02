@@ -35,7 +35,11 @@ class UserActivity : AppCompatActivity() {
     private lateinit var viewModelFactory: ViewModelFactory
 
     private lateinit var viewModel: UserViewModel
-
+    /**
+     * CompositeDisposable类:可以快速解除所有添加的Disposable类
+     * 每当我们得到一个Disposable时就调用CompositeDisposable.add()将它添加到容器中,
+     * 在退出的时候, 调用CompositeDisposable.clear() 即可快速解除.
+     */
     private val disposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
